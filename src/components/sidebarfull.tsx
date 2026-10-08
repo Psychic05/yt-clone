@@ -1,4 +1,4 @@
-import {House, User, TvMinimalPlay, ChevronRight, SquareUserRound, RotateCcwClock, ListVideo, ShoppingBag, Music2, Flag} from 'lucide-react';
+import {House, ChevronRight, SquareUserRound, RotateCcwClock, ListVideo, ShoppingBag, Music2, Flag} from 'lucide-react';
 
 
 export default function Sidebarfull () {
