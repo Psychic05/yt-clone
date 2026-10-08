@@ -1,9 +1,16 @@
 import {House, ChevronRight, SquareUserRound, RotateCcwClock, ListVideo, ShoppingBag, Music2, Flag} from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 
 
 export default function Sidebarfull () {
+    
+
+    const { pathname } = useLocation()
+    const isWatchPage = pathname.startsWith("/watch")
+
     return (
-        <div className="flex flex-col h-fill w-70 items-start pr-2 justify-items-start text-white bg-black">
+        <div className={isWatchPage ? "z-40 inset fixed top-16 h-full" : ""}>
+        <div className="flex flex-col h-full w-70 items-start pr-2 justify-items-start text-white bg-black">
             
             <div className="w-full h-fit flex flex-col p-4 pt-2 pb-4 border-b border-zinc-700">
                 <div className="flex items-center gap-4 hover:bg-zinc-800 w-full p-2 rounded-lg ">
@@ -93,6 +100,7 @@ export default function Sidebarfull () {
             </div>
 
             
+        </div>
         </div>
     )
 

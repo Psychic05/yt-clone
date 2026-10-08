@@ -2,6 +2,11 @@ import Videoplayer from "./videoplayer"
 import Videotitle from "./videotitle"
 import Comments from "./comments"
 import Thumbnail from "./thumbnail"
+import { useParams } from "react-router-dom"
+import Sidebarfull from './sidebarfull'
+import { useSidebarStore } from "../filestore"
+
+
 
   const array_videos=[{id:"1", image:"https://picsum.photos/seed/video1/640/360", title:"title 1", channel:"channel 1", views:"10", time:"2:00", uploaded:"2wks"},
     {id:"2", image:"https://picsum.photos/seed/video2/640/360", title:"title 2", channel:"channel 2", views:"20", time:"4:34", uploaded:"4wks",},
@@ -22,22 +27,36 @@ const thumnbailhovercolor = [
     "before:bg-orange-600/30"
   ]
 
+
+
 export default function VideoPage () {
+
+    const {id} = useParams()
+    
+    const video=array_videos.find((v) => v.id===id)
+
+    if (!video) return <div className="text-white p-4 bg-zinc-800 rounded-xl">Video Not Found</div>
+
+    const SidebarStore = useSidebarStore ()
+
     return (
-        <div className="flex flex-col">  
+        <div className="flex flex-col w-full">  
+            
+            {SidebarStore.isOpen && <Sidebarfull/>}
+            
             <Videoplayer/>
 
             {/* other things */}
-            <div className="flex w-full gap-4">
+            <div className="flex w-full h-full">
 
                 {/* title */}
-                <div className="flex flex-col w-full">
+                <div className="flex flex-col w-full h-full">
                     <Videotitle/>
                     <Comments/>
                 </div>
 
                 {/* recommendations */}
-                <div className="flex flex-col items-start h-fit p-2 bg-black w-40">
+                <div className="flex flex-col items-start h-fit p-2 bg-red-500 w-fit">
                     {array_videos.map((video, i) => (
                         <Thumbnail  key={video.id}
                                     videourl={`/watch/${video.id}`}

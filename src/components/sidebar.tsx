@@ -8,7 +8,7 @@ export default function Sidebar() {
     const [sidebaropen,setsidebaropen] = useState(false)
 
     return (
-        <div className="flex">
+        <div className="">
             
             {/* Colapsed */}
             <div className="flex flex-col h-screen gap-6 items-center justify-items-start text-white py-8 pt-4 px-1 bg-black">

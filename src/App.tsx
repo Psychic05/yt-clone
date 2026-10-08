@@ -5,7 +5,9 @@ import Sidebar from './components/sidebar'
 import Sidebarfull from './components/sidebarfull'
 import { useSidebarStore } from './filestore'
 import VideoPage from './components/videopage'
-import {Routes, Route, BrowserRouter } from "react-router-dom"
+import {Routes, Route, BrowserRouter, useLocation } from "react-router-dom"
+
+
 
 const thumbnailcolorsetup = "relative before:self-center before:justify-self-center before:absolute before:w-[80%] before:h-[80%] hover:before:w-full hover:before:h-full before:rounded-2xl before:-z-1 before:transition-all before:opacity-0 hover:before:opacity-100 before:duration-200"
   
@@ -53,18 +55,34 @@ function App() {
 
   const SidebarStore = useSidebarStore ()
 
+  const { pathname } = useLocation()
+  
+  const isWatchPage = pathname.startsWith("/watch")
+
   return (
     <>
-    <BrowserRouter>
+    
       <div className="flex flex-col w-full h-full bg-black">
 
         <Titlebar/>
 
-        <VideoPage/>
+        {/* <VideoPage/> */}
 
         <div className="flex">
           
-          {SidebarStore.isOpen? <Sidebarfull/>: <Sidebar/>}
+        {/* using zustand memory & functions that we created this is asking 
+        if the boolean is false then its open & the fallback is collased sidebar
+        
+        OR if the toggle is clicked again it goes to collapsed sidebar*/}
+        {/* {SidebarStore.isOpen? <Sidebarfull/>: <Sidebar/>} */}
+
+
+        {/* same thing as previous logic 
+        
+        difference is watchpage, which checks specifically for the route 
+        which has watch in pathname & it still has the full width but when 
+        toggled it now goes to nothing*/}
+        {SidebarStore.isOpen? <Sidebarfull/>: !isWatchPage && <Sidebar/>}
 
         <Routes>
           <Route path="/" element={<Home/>}/>
@@ -76,7 +94,7 @@ function App() {
 
 
       </div>
-    </BrowserRouter>
+    
 
     </>
   )

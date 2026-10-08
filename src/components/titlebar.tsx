@@ -1,5 +1,6 @@
 import {Menu, Bell, Plus, Mic, Search} from 'lucide-react';
 import { useSidebarStore } from '../filestore';
+import {Link} from "react-router-dom"
 
 // type Props = {
 //     onMenuclick: () => void
@@ -16,9 +17,11 @@ export default function Titlebar() {
                 <button onClick={() => SidebarStore.toggle()}>
                     <Menu strokeWidth={1.75}/>
                 </button>
+                <Link to="/">
                 <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/YouTube_dark_logo_2017.svg/960px-YouTube_dark_logo_2017.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail" 
                 alt="" 
                 className="h-5" />
+                </Link>
                 
             </div>
 
