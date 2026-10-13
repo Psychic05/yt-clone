@@ -38,14 +38,14 @@ export default function Videotitle () {
 
                     {/* like/dislike */}
                     <div className="flex items-center">
-                        <button className="flex gap-2 pl-5 pr-3 py-3 bg-zinc-700 rounded-l-full border-r border-zinc-400 hover:bg-zinc-500"><ThumbsUp/><p className="">33</p></button>
+                        <button className="transition-all duration-200 flex gap-2 pl-5 pr-3 py-3 bg-zinc-700 rounded-l-full border-r border-zinc-400 hover:bg-zinc-500"><ThumbsUp/><p className="">33</p></button>
                         
-                        <button className="pr-5 py-3 pl-3 bg-zinc-700 rounded-r-full hover:bg-zinc-500"><ThumbsDown/></button>
+                        <button className="transition-all duration-200 pr-5 py-3 pl-3 bg-zinc-700 rounded-r-full hover:bg-zinc-500"><ThumbsDown/></button>
                     </div>
-                    <button className="flex w-12 h-12 items-center justify-center bg-zinc-700 rounded-full hover:bg-zinc-500"><Forward strokeWidth={2} /></button>
-                    <button className="flex w-12 h-12 items-center justify-center bg-zinc-700 rounded-full hover:bg-zinc-500"><Astroid strokeWidth={0.1} fill="white"/></button>
-                    <button className="flex w-12 h-12 items-center justify-center bg-zinc-700 rounded-full hover:bg-zinc-500"><Bookmark strokeWidth={2} /></button>
-                    <button className="flex w-12 h-12 items-center justify-center bg-zinc-700 rounded-full hover:bg-zinc-500"><Ellipsis strokeWidth={2}  /></button>
+                    <button className="transition-all duration-200 flex w-12 h-12 items-center justify-center bg-zinc-700 rounded-full hover:bg-zinc-500"><Forward strokeWidth={2} /></button>
+                    <button className="transition-all duration-200 flex w-12 h-12 items-center justify-center bg-zinc-700 rounded-full hover:bg-zinc-500"><Astroid strokeWidth={0.1} fill="white"/></button>
+                    <button className="transition-all duration-200 flex w-12 h-12 items-center justify-center bg-zinc-700 rounded-full hover:bg-zinc-500"><Bookmark strokeWidth={2} /></button>
+                    <button className="transition-all duration-200 flex w-12 h-12 items-center justify-center bg-zinc-700 rounded-full hover:bg-zinc-500"><Ellipsis strokeWidth={2}  /></button>
 
                 </div>
 
@@ -53,7 +53,7 @@ export default function Videotitle () {
             </div>
 
             {/* Description */}
-            <div className="flex flex-col items-start w-full h-fit p-2.5 bg-zinc-700 hover:bg-orange-800 rounded-lg">
+            <div className="transition-all duration-200 flex flex-col items-start w-full h-fit p-2.5 bg-zinc-700 hover:bg-orange-800 rounded-lg">
                 <div className="text-white font-semibold text-sm flex gap-2">
                     <div className="">44 views</div>
                     <div className="">17hr ago</div>

@@ -56,7 +56,7 @@ export default function VideoPage () {
                 </div>
 
                 {/* recommendations */}
-                <div className="flex border flex-col h-fit pt-2 gap-2 md:w-2/5 lg:w-1/5">
+                <div className="flex flex-col h-fit pt-2 gap-2 md:w-2/5 lg:w-1/5">
                     {array_videos.map((video, i) => (
                         <Thumbnail  orientation="horizontal"
                                     key={video.id}
