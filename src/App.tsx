@@ -34,7 +34,7 @@ function Home() {
   return (
     <div className="grid md:grid-cols-2 xs:grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 items-start h-fit p-2 bg-black w-full">
             {array_videos.map((video, i) => (
-              <Thumbnail 
+              <Thumbnail orientation="vertical"
                         key={video.id}
                         videourl={`/watch/${video.id}`}
                         image={video.image}

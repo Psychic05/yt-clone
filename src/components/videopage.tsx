@@ -50,15 +50,16 @@ export default function VideoPage () {
             <div className="flex w-full h-full">
 
                 {/* title */}
-                <div className="flex flex-col w-full h-full">
+                <div className="flex flex-col md:w-3/5 lg:w-4/5 h-full">
                     <Videotitle/>
                     <Comments/>
                 </div>
 
                 {/* recommendations */}
-                <div className="flex flex-col items-start h-fit p-2 bg-red-500 w-fit">
+                <div className="flex border flex-col h-fit pt-2 gap-2 md:w-2/5 lg:w-1/5">
                     {array_videos.map((video, i) => (
-                        <Thumbnail  key={video.id}
+                        <Thumbnail  orientation="horizontal"
+                                    key={video.id}
                                     videourl={`/watch/${video.id}`}
                                     image={video.image}
                                     title={video.title}
