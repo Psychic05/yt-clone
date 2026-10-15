@@ -1,6 +1,8 @@
 import {Menu, Bell, Plus, Mic, Search} from 'lucide-react';
 import { useSidebarStore } from '../filestore';
 import {Link} from "react-router-dom"
+import Searchbar from "./searchbar" 
+import Greet from './greet'
 
 // type Props = {
 //     onMenuclick: () => void
@@ -29,16 +31,24 @@ export default function Titlebar() {
 
             {/* Center */}
             <div className="flex items-center gap-4">
-                <div className="rounded-full flex justify-between gap-20 items-center border border-slate-800 pl-4 p-1">
+
+                
+
+                {/* <div className="rounded-full flex justify-between gap-20 items-center border border-slate-800 pl-4 p-1">
                     <span className="">Search or ask a question</span>
                     <div className="text-white bg-zinc-800 p-2 rounded-full">
                         <Search/>
                     </div>
-                </div>
+                    
+                </div> */}
+
+                <Searchbar/>
 
                 <div className="text-white bg-zinc-800 p-2 rounded-full">
                     <Mic/>
                 </div>
+
+                
 
             </div>
 

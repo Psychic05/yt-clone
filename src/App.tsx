@@ -9,6 +9,7 @@ import {Routes, Route, BrowserRouter, useLocation } from "react-router-dom"
 
 
 
+
 const thumbnailcolorsetup = "relative before:self-center before:justify-self-center before:absolute before:w-[80%] before:h-[80%] hover:before:w-full before:-top-0.5 hover:before:h-full before:rounded-3xl before:-z-1 before:transition-all before:opacity-0 hover:before:opacity-100 before:duration-200"
   
 const thumnbailhovercolor = [

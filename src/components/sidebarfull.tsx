@@ -1,15 +1,17 @@
 import {House, ChevronRight, SquareUserRound, RotateCcwClock, ListVideo, ShoppingBag, Music2, Flag} from 'lucide-react';
 import { useLocation } from 'react-router-dom';
+import { useSidebarStore } from '../filestore';
 
 
 export default function Sidebarfull () {
     
-
+    const {isOpen, setIsOpen} = useSidebarStore();
+    
     const { pathname } = useLocation()
     const isWatchPage = pathname.startsWith("/watch")
 
     return (
-        <div className={isWatchPage ? "fixed tansition-all ease-out z-40 starting:-translate-x-full inset duration-100 top-16 h-full" : ""}>
+        <div className={isWatchPage ? `fixed tansition-all ease-out {isOpen ? "" : ""} z-40 starting:-translate-x-full inset duration-100 top-16 h-full` : ""}>
             <div className="flex flex-col h-full w-70 items-start pr-2 justify-items-start text-white bg-black">
                 
                 {/* Home */}
